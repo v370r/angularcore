@@ -1,0 +1,8 @@
+Assignment 1
+<!-- <span>{{loadState}}</span> -->
+<BR>
+  <P [textContent]= "loadState"></P>
+<button (click)="OnLoad()" type = "submit"> submit</button>
+<div>
+  <input type="text" (input)="loadState = $event.target.value">
+</div>
