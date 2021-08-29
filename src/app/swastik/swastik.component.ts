@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SwastikComponent implements OnInit {
   searchTerm = ""
-  itemsCopy =["bandna","apple","corienader","Awdawd","appLe","ApPle"]
+  itemsCopy =["bandna","apple","corienader","Awdawd","appLe","ApPles"]
   items = this.itemsCopy.slice().map(v => v.toLowerCase())
   mess = [];
   mess2= [];
@@ -21,9 +21,14 @@ export class SwastikComponent implements OnInit {
   search(e){
     if (e.target.value !=="")
         {this.mess = this.items.filter((item) => item.startsWith(e.target.value.toLowerCase()))
-        this.mess2 =this.mess.filter( e  => this.itemsCopy[this.mess.indexOf(e)])
+        // this.mess2 =this.mess.filter( ite  => this.itemsCopy[this.items.indexOf(ite)])
+
+        for(let i=0; i<this.mess.length; i++){
+          this.mess2.push(this.itemsCopy[this.items.indexOf(this.mess[i])])
+        }
         console.log(this.mess2)
-        this.sliced =["bandna","apple","corienader","Awdawd","appLe","ApPle"]
+        console.log(this.mess)
+        this.sliced =["bandna","apple","corienader","Awdawd","appLe","ApPles"]
         // for (let i = 0; i < this.mess.length; i++) {
         //   this.ind = this.items.indexOf(this.mess[i])
         //   this.sliced = this.itemsCopy.slice(this.ind)
